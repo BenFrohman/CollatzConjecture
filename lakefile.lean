@@ -10,4 +10,4 @@ package «collatz-statement» where
 
 @[default_target]
 lean_lib CollatzStatement where
-  roots := #[`CollatzConjecture, `Collatz, `CollatzArgument]
+  roots := #[`CollatzForAll, `CollatzConjecture, `Collatz, `CollatzArgument]

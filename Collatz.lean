@@ -1,3 +1,4 @@
+import CollatzForAll
 import CollatzArgument
 
 /-
