@@ -18,4 +18,3 @@ def iter (k n : Nat) : Nat :=
 some iterate of `T` equals `1`. -/
 def CollatzForAll : Prop :=
   ∀ n : Nat, 0 < n → ∃ k : Nat, iter k n = 1
-
