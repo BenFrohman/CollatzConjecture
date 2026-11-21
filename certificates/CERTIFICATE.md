@@ -16,6 +16,13 @@ This file records a local machine check of the Lean 4 development in this reposi
 
 The sibling repositories `collatz-teaming-lemma` and `collatz-terras-density` use Lean 4.34.0 and also replay modules with `leanchecker`. This tree is pinned to `v4.30.0-rc1`, and `leanchecker` was not run. The axiom lines come from `collectAxioms` after `lake build`.
 
+GitHub Actions on `statement/collatz-for-all` at `41872cca`, before the merge into `main`:
+
+- `build` succeeded: https://github.com/BenFrohman/CollatzConjecture/actions/runs/44957281166
+- `certify` succeeded: https://github.com/BenFrohman/CollatzConjecture/actions/runs/44957281168
+
+Pull request #1 merged those files. `CollatzForAll` remains a `Prop`.
+
 ## Scope
 
 `CollatzForAll` is included in this build. Its statement is `∀ n : Nat, 0 < n → ∃ k, iter k n = 1`, the same sentence as `RemainingLemma`. The audit does not list it, because a `def` of a `Prop` is not a theorem. `CollatzConjecture` is the same kind of declaration. `collatz_orbit_seven` and `reachesOne_seven` are the ordinary trajectory of 7. They do not prove `CollatzForAll`.
