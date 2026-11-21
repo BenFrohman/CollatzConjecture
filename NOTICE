@@ -6,4 +6,4 @@ records the lemmas that typecheck around that proposition.
 
 CollatzConjecture is a Prop. It is not a theorem.
 No theorem in this repository has the Collatz conjecture as its conclusion.
-No Zenodo DOI is claimed by this notice.
+The accompanying note is 10.5281/zenodo.24429710. That record does not prove the conjecture.

@@ -2,7 +2,9 @@
 
 Author: Benjamin Stanley Frohman &lt;frohmanbenjamin@gmail.com&gt;
 
-This repository states the Collatz conjecture as a Lean 4 proposition. It does not prove it. No Zenodo DOI has been issued for this statement.
+This repository states the Collatz conjecture as a Lean 4 proposition. It does not prove it.
+
+Zenodo note: [10.5281/zenodo.24429710](https://doi.org/10.5281/zenodo.24429710). The note records the trajectory of 7 and the classical lemmas. It does not prove the conjecture.
 
 Toolchain: `leanprover/lean4:v4.30.0-rc1`, read from `lean-toolchain`. Elan selects that compiler when the commands below are run in this directory. Dependencies: none. `lakefile.lean` builds the three root modules with `autoImplicit` off.
 
