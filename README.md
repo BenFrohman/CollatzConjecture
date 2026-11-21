@@ -25,6 +25,8 @@ These are the conclusions of the finished theorems. None of them is `CollatzConj
 - `reachesOne_pow_two` concludes that every `2 ^ k` reaches `1`. Axiom: `propext`.
 - `collatz_odd_two_step` concludes that an odd `n`, after two steps, equals `(3 * n + 1) / 2`. Axiom: `propext`.
 - `reachesOne_three` concludes that `3` reaches `1`. No axioms.
+- `collatz_orbit_seven` concludes the 16 steps from `7` to `1`. Five of them are `3 * n + 1`: `7`, `11`, `17`, `13`, and `5`. No axioms. This is the ordinary trajectory of `7`, not a new cycle.
+- `reachesOne_seven` concludes that `7` reaches `1` in 16 steps. No axioms.
 - `hitsPowerOfTwo_of_reachesOne` concludes that reaching `1` means the same iterate equals `2 ^ 0`. No axioms.
 
 `#print axioms` lists no `sorryAx`.

@@ -132,6 +132,33 @@ theorem collatz_iff_hitsPowerOfTwo :
 theorem reachesOne_three : reachesOne 3 :=
   ⟨7, rfl⟩
 
+/-- The trajectory of `7`, a different start from `3`.
+Five terms are odd, and each uses `3 * n + 1`:
+`7 → 22`, `11 → 34`, `17 → 52`, `13 → 40`, `5 → 16`.
+The rest are halving steps. The path joins the powers of two at `16` and ends at `1`.
+This trajectory is the ordinary orbit of `7`. It is not an undiscovered cycle. -/
+theorem collatz_orbit_seven :
+    collatzStep 7 = 3 * 7 + 1 ∧
+    collatzStep 22 = 11 ∧
+    collatzStep 11 = 3 * 11 + 1 ∧
+    collatzStep 34 = 17 ∧
+    collatzStep 17 = 3 * 17 + 1 ∧
+    collatzStep 52 = 26 ∧
+    collatzStep 26 = 13 ∧
+    collatzStep 13 = 3 * 13 + 1 ∧
+    collatzStep 40 = 20 ∧
+    collatzStep 20 = 10 ∧
+    collatzStep 10 = 5 ∧
+    collatzStep 5 = 3 * 5 + 1 ∧
+    collatzStep 16 = 8 ∧
+    collatzStep 8 = 4 ∧
+    collatzStep 4 = 2 ∧
+    collatzStep 2 = 1 := by
+  decide
+
+theorem reachesOne_seven : reachesOne 7 :=
+  ⟨16, rfl⟩
+
 #print axioms iterate_add
 #print axioms collatzStep_even
 #print axioms collatzStep_odd
@@ -145,3 +172,5 @@ theorem reachesOne_three : reachesOne 3 :=
 #print axioms hitsPowerOfTwo_of_reachesOne
 #print axioms collatz_iff_hitsPowerOfTwo
 #print axioms reachesOne_three
+#print axioms collatz_orbit_seven
+#print axioms reachesOne_seven
