@@ -1,0 +1,9 @@
+Collatz conjecture statement
+Copyright (c) 2026 Benjamin Stanley Frohman <frohmanbenjamin@gmail.com>
+
+This repository states the Collatz conjecture as a Lean 4 proposition and
+records the lemmas that typecheck around that proposition.
+
+CollatzConjecture is a Prop. It is not a theorem.
+No theorem in this repository has the Collatz conjecture as its conclusion.
+No Zenodo DOI is claimed by this notice.

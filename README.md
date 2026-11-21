@@ -1,8 +1,10 @@
 # Collatz conjecture
 
-This repository states the Collatz conjecture as a Lean 4 proposition. It does not prove it.
+Author: Benjamin Stanley Frohman &lt;frohmanbenjamin@gmail.com&gt;
 
-Toolchain: `leanprover/lean4:v4.30.0-rc1`.
+This repository states the Collatz conjecture as a Lean 4 proposition. It does not prove it. No Zenodo DOI has been issued for this statement.
+
+Toolchain: `leanprover/lean4:v4.30.0-rc1`, read from `lean-toolchain`. Elan selects that compiler when the commands below are run in this directory. Dependencies: none. `lakefile.lean` builds the three root modules with `autoImplicit` off.
 
 ## Official statement
 
@@ -15,10 +17,25 @@ def CollatzConjecture : Prop :=
   ∀ n : Nat, 0 < n → ∃ k : Nat, iterate collatzStep k n = 1
 ```
 
-Check the declaration with `lean CollatzConjecture.lean`. The output of `#check CollatzConjecture` is `CollatzConjecture : Prop`.
+## Conclusions that typecheck
 
-## What else typechecks
+These are the conclusions of the finished theorems. None of them is `CollatzConjecture`.
 
-`CollatzArgument.lean` proves that this proposition is equivalent to every positive natural number eventually hitting a power of two, proves the two-step odd branch `(3 * n + 1) / 2`, proves that every power of two reaches `1`, and proves that `3` reaches `1`. `#print axioms` on those theorems lists `propext` or no axioms. None of them has type `CollatzConjecture`.
+- `collatz_iff_hitsPowerOfTwo` concludes that `CollatzConjecture` is equivalent to `∀ n, 0 < n → hitsPowerOfTwo n`. Hitting a power of two means some iterate equals `2 ^ m`. Axiom: `propext`.
+- `reachesOne_pow_two` concludes that every `2 ^ k` reaches `1`. Axiom: `propext`.
+- `collatz_odd_two_step` concludes that an odd `n`, after two steps, equals `(3 * n + 1) / 2`. Axiom: `propext`.
+- `reachesOne_three` concludes that `3` reaches `1`. No axioms.
+- `hitsPowerOfTwo_of_reachesOne` concludes that reaching `1` means the same iterate equals `2 ^ 0`. No axioms.
 
-Author: Benjamin Stanley Frohman.
+`#print axioms` lists no `sorryAx`.
+
+## Check
+
+```sh
+lake update
+lake build
+```
+
+`lake build` elaborates the modules. A successful build does not make `CollatzConjecture` a theorem.
+
+License: see `NOTICE`.
