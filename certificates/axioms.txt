@@ -1,0 +1,20 @@
+'collatzStep.eq_1' does not depend on any axioms
+'collatzStep_even' depends on axioms: [propext]
+'collatzStep_odd' depends on axioms: [propext]
+'collatzStep_two_mul' depends on axioms: [propext]
+'collatz_iff_hitsPowerOfTwo' depends on axioms: [propext]
+'collatz_odd_two_step' depends on axioms: [propext]
+'collatz_orbit_seven' does not depend on any axioms
+'hitsPowerOfTwo_of_reachesOne' does not depend on any axioms
+'iterate.eq_1' does not depend on any axioms
+'iterate.eq_2' does not depend on any axioms
+'iterate.eq_def' does not depend on any axioms
+'iterate_add' depends on axioms: [propext]
+'iterate_hits_reachesOne' depends on axioms: [propext]
+'odd_three_mul_succ_even' depends on axioms: [propext]
+'reachesOne_of_hitsPowerOfTwo' depends on axioms: [propext]
+'reachesOne_pow_two' depends on axioms: [propext]
+'reachesOne_seven' does not depend on any axioms
+'reachesOne_three' does not depend on any axioms
+'two_mul_mod_two' depends on axioms: [propext]
+AUDIT PASS: 19 theorems in 1 modules depend only on propext, Classical.choice, Quot.sound (or on no axioms)

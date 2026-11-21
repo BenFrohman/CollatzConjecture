@@ -16,6 +16,12 @@ def iterate (f : Nat → Nat) : Nat → Nat → Nat
   | 0, n => n
   | k + 1, n => iterate f k (f n)
 
+def reachesOne (n : Nat) : Prop :=
+  ∃ k : Nat, iterate collatzStep k n = 1
+
+def hitsPowerOfTwo (n : Nat) : Prop :=
+  ∃ k m : Nat, iterate collatzStep k n = 2 ^ m
+
 /-- The Collatz conjecture.
 
 For every natural number `n` with `0 < n`, there exists a natural number `k`
@@ -25,4 +31,3 @@ This declaration is a `Prop`. It is not a theorem. -/
 def CollatzConjecture : Prop :=
   ∀ n : Nat, 0 < n → ∃ k : Nat, iterate collatzStep k n = 1
 
-#check CollatzConjecture

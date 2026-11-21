@@ -1,3 +1,5 @@
+import CollatzConjecture
+
 /-
 The Collatz argument that can be built without assuming the conjecture.
 
@@ -11,27 +13,6 @@ The Collatz argument that can be built without assuming the conjecture.
 
 The equivalent statement `∀ n, 0 < n → hitsPowerOfTwo n` is not proved.
 -/
-
-def collatzStep (n : Nat) : Nat :=
-  if n % 2 = 0 then n / 2 else 3 * n + 1
-
-/-- Apply `f` exactly `k` times. `iterate f (k + 1) n = iterate f k (f n)`. -/
-def iterate (f : Nat → Nat) : Nat → Nat → Nat
-  | 0, n => n
-  | k + 1, n => iterate f k (f n)
-
-def reachesOne (n : Nat) : Prop :=
-  ∃ k : Nat, iterate collatzStep k n = 1
-
-def hitsPowerOfTwo (n : Nat) : Prop :=
-  ∃ k m : Nat, iterate collatzStep k n = 2 ^ m
-
-/-- The Collatz conjecture, in the form fixed by `CollatzConjecture.lean`.
-
-`reachesOne n` is `∃ k, iterate collatzStep k n = 1`, so this `Prop` is the
-same statement as the official declaration. It is not a theorem. -/
-def CollatzConjecture : Prop :=
-  ∀ n : Nat, 0 < n → ∃ k : Nat, iterate collatzStep k n = 1
 
 theorem iterate_add (f : Nat → Nat) (k j n : Nat) :
     iterate f (k + j) n = iterate f j (iterate f k n) := by
@@ -159,18 +140,3 @@ theorem collatz_orbit_seven :
 theorem reachesOne_seven : reachesOne 7 :=
   ⟨16, rfl⟩
 
-#print axioms iterate_add
-#print axioms collatzStep_even
-#print axioms collatzStep_odd
-#print axioms collatzStep_two_mul
-#print axioms two_mul_mod_two
-#print axioms odd_three_mul_succ_even
-#print axioms collatz_odd_two_step
-#print axioms reachesOne_pow_two
-#print axioms iterate_hits_reachesOne
-#print axioms reachesOne_of_hitsPowerOfTwo
-#print axioms hitsPowerOfTwo_of_reachesOne
-#print axioms collatz_iff_hitsPowerOfTwo
-#print axioms reachesOne_three
-#print axioms collatz_orbit_seven
-#print axioms reachesOne_seven

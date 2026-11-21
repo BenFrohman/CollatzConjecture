@@ -33,6 +33,12 @@ These are the conclusions of the finished theorems. None of them is `CollatzConj
 
 `#print axioms` lists no `sorryAx`.
 
+## Kernel certificate
+
+The local check is `certificates/CERTIFICATE.md`. `lake build` completed (5 jobs). The sorry scan is 0 hits. `collectAxioms` reports 19 theorems, each depending only on `propext` or on no axioms. `CollatzConjecture` is not one of those theorems. GitHub Actions workflows `Lean 4` and `Lean certificate` rerun the build and the audit. This note does not cite an Actions run that has not finished.
+
+Author: Benjamin Stanley Frohman (ORCID 0009-0006-7068-3718). License: Apache-2.0 (`LICENSE`).
+
 ## Check
 
 ```sh
