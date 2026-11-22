@@ -35,7 +35,7 @@ These are the conclusions of the finished theorems. None of them is `CollatzConj
 
 ## Kernel certificate
 
-The local check is `certificates/CERTIFICATE.md`. `lake build` completed (6 jobs) and includes `CollatzForAll`. The sorry scan is 0 hits. `collectAxioms` reports 19 theorems, each depending only on `propext` or on no axioms. `CollatzForAll` is the universal sentence and is not one of those theorems. The Actions runs cited in that certificate finished successfully. The Zenodo note [10.5281/zenodo.24429710](https://doi.org/10.5281/zenodo.24429710) records the trajectory of 7 and those lemmas. It is not the teaming-lemma preprint [10.5281/zenodo.23629486](https://doi.org/10.5281/zenodo.23629486), and it is not a proof of `CollatzForAll`.
+The local check is `certificates/CERTIFICATE.md`. `lake build` completed (6 jobs) and includes `CollatzForAll`. The sorry scan is 0 hits. `collectAxioms` reports 19 theorems, each depending only on `propext` or on no axioms. `CollatzForAll` is the universal sentence and is not one of those theorems. The Actions runs cited in that certificate finished successfully. The Zenodo note [10.5281/zenodo.24429710](https://doi.org/10.5281/zenodo.24429710) records the trajectory of 7 and those lemmas. It is not the teaming-lemma preprint [10.5281/zenodo.23629486](https://doi.org/10.5281/zenodo.23629486), and it is not a proof of `CollatzForAll`. Version 1.1.0 of that teaming record, [10.5281/zenodo.24451015](https://doi.org/10.5281/zenodo.24451015), attaches the teaming kernel logs and does not prove `CollatzForAll`. The p2q-jumps-lean PDF is a separate four-theorem certificate at commit `821e35e`, Lean 4.26.0.
 
 Author: Benjamin Stanley Frohman (ORCID 0009-0006-7068-3718). License: Apache-2.0 (`LICENSE`).
 
