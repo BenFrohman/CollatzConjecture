@@ -1,0 +1,21 @@
+name: Lean certificate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+      - name: Sorry and axiom-declaration scan
+        run: python3 certificates/tools/sorry_scan.py
+      - name: Collect axioms for every theorem
+        run: |
+          set -o pipefail
+          python3 certificates/tools/gen_audit.py /tmp/KernelCertificateAudit.lean /tmp/modules.txt
+          lake env lean /tmp/KernelCertificateAudit.lean > /tmp/axioms.raw.txt
+          python3 certificates/tools/check_audit.py /tmp/axioms.raw.txt
